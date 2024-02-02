@@ -22,7 +22,7 @@ pipeline {
 
     }
 
-    environment {
+    // environment {
         // APIGEE_CREDS = credentials('apigee')
 
         // Multiple options for setting the Apigee deployment target config:
@@ -34,7 +34,7 @@ pipeline {
         // APIGEE_ORG = 'my-org'
         // APIGEE_TEST_ENV = 'test1'
         // TEST_HOST= 'api.example.com'
-    }
+    // }
 
 
     stages {
