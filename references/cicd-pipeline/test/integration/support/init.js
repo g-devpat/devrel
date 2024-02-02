@@ -24,7 +24,7 @@ const { Before, setDefaultTimeout } = require("@cucumber/cucumber");
 setDefaultTimeout(5 * 1000); // this is in ms
 
 Before(function () {
-  const host = process.env.TEST_HOST || "org-env.apigee.net";
+  const host = "apigee-api.34-111-243-89.nip.io";
   const basePath = `/airports-cicd${process.env.APIGEE_DEPLOYMENT_SUFFIX || ''}/v1`;
   const baseUri = `${host}${basePath}`;
   console.log(`Test Base URI: ${baseUri}`);
