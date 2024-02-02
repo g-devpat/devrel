@@ -9,11 +9,11 @@ pipeline {
             string(name: 'APIGEE_HOSTURL', defaultValue: 'https://apigee-ui.34-102-250-202.nip.io')
             string(name: 'APIGEE_TEST_ENV_P', defaultValue: 'test')
             string(name: 'APIGEE_PROD_ENV_P', defaultValue: '')
-            string(name: 'TEST_HOST_P', defaultValue: 'api.example.com')
+            string(name: 'TEST_HOST_P', defaultValue: 'apigee-api.34-111-243-89.nip.io')
             string(name: 'WORK_DIR_P', defaultValue: 'references/cicd-pipeline')
             choice(name: 'GCP_SA_AUTH_P', choices: [ "vm-scope", "jenkins-scope", "token" ], description: 'GCP SA/Token Scope'  )
 
-            string(name: 'APIGEE_USER_P', defaultValue: 'not-used')
+            string(name: 'APIGEE_USER_P', defaultValue: 'opdk@google.com')
             string(name: 'APIGEE_PASS_P', defaultValue: 'not-used')
             string(name: 'APIGEE_TOKEN_P', defaultValue: '')
 
@@ -164,7 +164,7 @@ pipeline {
             sh """
               mvn clean install \
                 -Papigeeapi \
-                -Dhosturl="${APIGEE_HOSTURL}"
+                -Dhosturl="${APIGEE_HOSTURL}" \
                 -Dpassword="${APIGEE_PASS_P}" \
                 -Denv="${env.APIGEE_ENV}" \
                 -Dusername="${APIGEE_USER_P}" \
